@@ -1,4 +1,6 @@
-// script.js
+// Add JavaScript functionality:
+//  Toggle visibility of the "Travel" and "Hotel" sections when their respective headers are clicked
+//  Populate the "Plan Ahead" section using an array of objects
 
 // Get the travel and hotel section elements
 const travelSection = document.querySelector('#travel-section');
