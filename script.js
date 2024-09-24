@@ -57,3 +57,47 @@ document.getElementById('updateForecast').addEventListener('click', () => {
 
 // Initial forecast for the default city
 updateWeatherForecast(defaultCity);
+
+// Project 6 JavaScript:
+// 1. Create a function to insert new plans into the Supabase table
+// 2. Fetch and display existing travel plans from Supabase
+// 3. Use forEach and/or filter to organize and display the plans
+// 4. Add the ability to delete or update existing plans
+
+const travelPlans = "https://elveyapsielprtcrwwha.supabase.co/rest/v1/travel_plans?select=*&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVsdmV5YXBzaWVscHJ0Y3J3d2hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjYyNDM2OTUsImV4cCI6MjA0MTgxOTY5NX0.oNUU6s8dV83Ake63TG840QNROpV4_KrTMK_KPyRC_fw"
+
+
+const travelPlansEl = document.querySelector('#travel-plans-list');
+
+
+// 1. connect to the endpont
+fetch(travelPlans)
+  // 2. pull the JSON
+  .then(response => response.json())
+  // 3. do stuff with the data that comes back
+  .then(data => {
+    // console.log(data);
+
+   //  data.forEach(item => console.log(item))
+    data.forEach(item => showPostsWebView(item))
+  })
+
+
+
+function showPostsWebView(item = {}) {
+
+console.log(item)
+  const div = document.createElement('div');
+  div.innerHTML = `
+                <div class="card-body">
+                        <h3 class="card-title">${item['date']}</h3>
+                        <p class="text-gray-600">Location: ${item['location']}</p>
+                        <p>${item['plan']}</p>
+                        <div class="card-actions justify-end">
+                            <button type="submit" class="btn btn-primary">Add Plan</button>
+                        </div>
+                </div>
+    `
+  travelPlansEl.appendChild(div);
+}
+
