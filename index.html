@@ -1,226 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airtrav - Trip Planner</title>
-    <!-- Include Tailwind CSS and DaisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Airtrav - Trip Planner</title>
+	<!-- Include Tailwind CSS and DaisyUI -->
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="script.js" defer></script>
 </head>
+
 <body>
-    <!-- We'll add our content here -->
+	<!-- We'll add our content here -->
 
-     <!-- Navigation bar -->
-    <nav class="bg-white p-4 flex justify-between items-center">
-    <!-- Logo -->
-        <div class="flex items-center">
-            <img src="Airtrav-logo.png" alt="Airtrav Logo" class="h-8 w-8 mr-2">
-            <span class="text-xl font-bold">Airtrav</span>
-        </div>
-    
-    <!-- Navigation links -->
-        <div class="flex items-center space-x-4">
-                <a href="#" class="text-gray-600">Things To Do</a>
-                <a href="#" class="text-gray-600">Tour</a>
-                <a href="#" class="text-gray-600">Blog</a>
-                <span class="text-gray-600">USD</span>
-                <span class="text-gray-600">FAQ</span>
-                <img src="path-to-bell-icon.svg" alt="Notifications" class="h-6 w-6">
-                <img src="path-to-profile-pic.jpg" alt="Profile" class="h-8 w-8 rounded-full">
-        </div>
-    </nav>
-
-<!-- Main content -->
-    <main class="container mx-auto mt-8">
-        <!-- Trip checklist tabs -->
-        <div class="flex space-x-4 mb-4">
-            <button class="btn btn-ghost">Route</button>
-            <button class="btn btn-ghost">Day by day</button>
-            <button class="btn btn-ghost">Where to stay</button>
-            <button class="btn btn-active">Checklist</button>
+	<!-- Navigation bar -->
+	<nav class="bg-white p-4 flex justify-between items-center">
+		<!-- Logo -->
+		<div class="flex items-center">
+			<img src="Airtrav-logo.png" alt="Airtrav Logo" class="h-8 w-20 mr-2">
         </div>
 
-        <!-- Trip checklist content -->
-        <div class="flex">
-            <!-- Left sidebar -->
-            <div class="w-1/4 pr-4">
-                <h2 class="text-xl font-bold mb-4">Trip checklist</h2>
-                <ul class="space-y-2">
-                    <li class="flex items-center"><span class="bg-orange-100 text-orange-500 p-2 rounded-full mr-2">✈️</span> Travel (2)</li>
-                    <li class="flex items-center"><span class="bg-green-100 text-green-500 p-2 rounded-full mr-2">🎟️</span> Tickets & Tours (2)</li>
-                    <li class="flex items-center"><span class="bg-blue-100 text-blue-500 p-2 rounded-full mr-2">🏨</span> Hotel (1)</li>
-                    <li class="flex items-center"><span class="bg-purple-100 text-purple-500 p-2 rounded-full mr-2">📅</span> Plan Ahead (4)</li>
-                </ul>
-            </div>
-
-            <!-- Right content area -->
-            <div class="w-3/4">
-                <!-- Progress bar -->
-                <div class="mb-8">
-                    <h3 class="text-lg font-semibold mb-2">Check list</h3>
-                    <div class="bg-gray-200 h-2 rounded-full">
-                        <div class="bg-blue-500 h-2 rounded-full w-2/5"></div>
-                    </div>
-                    <span class="text-sm text-gray-500">40%</span>
-                </div>
-
-                <!-- ADD WEATHER API SECTION HERE -->
-                    
-
-                        <section class="container mx-auto mt-16 mb-16">
-                            <h2 class="text-2xl font-bold mb-4">Weather Forecast</h2>
-                            <div class="mb-4">
-                                <input type="text" id="cityInput" placeholder="Enter city name" class="input input-bordered w-full max-w-xs">
-                                <button id="updateForecast" class="btn btn-primary ml-2">Update Forecast</button>
-                            </div>
-                            <div id="weatherForecast" class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                                <!-- WEATHER CARDS WILL BE HERE TOO BY JAVASCRIPT -->
-                            </div>
-                        </section>
-                    
-                <!-- Travel section -->
-                <section class="mb-8" id="travel-section">
-                    <h3 class="text-lg font-semibold mb-4" id="travel-header">Travel (2)</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <!-- Flight cards -->
-                        <div class="card bg-base-100 shadow-xl">
-                            <div class="card-body">
-                                <h4 class="card-title">✈️ Dhaka City</h4>
-                                <p>📍 Bangkok</p>
-                                <button class="btn btn-primary">Check prices</button>
-                            </div>
-                        </div>
-                        <div class="card bg-base-100 shadow-xl">
-                            <div class="card-body">
-                                <h4 class="card-title">✈️ Bangkok</h4>
-                                <p>📍 Dhaka City</p>
-                                <button class="btn btn-primary">Check prices</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Tickets & Tours section -->
-                <section class="mb-8">
-                    <h3 class="text-lg font-semibold mb-4">Tickets & Tours (2)</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <!-- Tour cards -->
-                        <div class="card bg-base-100 shadow-xl">
-                            <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt96eI1duitjDwxBoTCBocYahoURKcEXdnQ&s" alt="Spas - Bangkok" /></figure>
-                            <div class="card-body">
-                                <h4 class="card-title">Spas - Bangkok</h4>
-                                <p>Wed 3/29</p>
-                                <button class="btn btn-primary">Buy tickets</button>
-                            </div>
-                        </div>
-                        <div class="card bg-base-100 shadow-xl">
-                            <figure><img src="https://www.kkday.com/en/blog/wp-content/uploads/featured_slb.jpg" alt="Sea Life Bangkok" /></figure>
-                            <div class="card-body">
-                                <h4 class="card-title">Sea Life Bangkok</h4>
-                                <p>Wed 8/29</p>
-                                <button class="btn btn-primary">Buy tickets</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Hotel section -->
-                <section class="mb-8" id="hotel-section">
-                    <h3 class="text-lg font-semibold mb-4" id="hotel-header">Hotel (1)</h3>
-                    <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
-                            <h4 class="card-title">🏨 Bangkok</h4>
-                            <p>Tue 3/28 - Sat 4/1</p>
-                            <button class="btn btn-primary">Check prices</button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Plan Ahead section -->
-                <section id="plan-ahead-section">
-                    <h3 class="text-lg font-semibold mb-4">Plan Ahead (4)</h3>
-                    <div class="space-y-4">
-                        <!-- Repeated for each plan ahead item -->
-                        <div class="card bg-base-100 shadow-xl">
-                            <div class="card-body flex flex-row justify-between items-center">
-                                <div class="flex items-center">
-                                    <span class="bg-orange-100 text-orange-500 p-2 rounded-full mr-2">📄</span>
-                                    <p>Check visa requirements</p>
-                                </div>
-                                <button class="btn btn-outline">Check visa</button>
-                            </div>
-                        </div>
-                        <!-- Repeat for other plan ahead items -->
-                    </div>
-                </section>
-            </div>
+			<!-- Navigation links -->
+			<div class="flex items-center space-x-4">
+				<a href="#" class="text-gray-600">Things To Do</a>
+				<a href="#" class="text-gray-600">Tour</a>
+				<a href="#" class="text-gray-600">Blog</a>
+				<span class="text-gray-600">USD</span>
+				<span class="text-gray-600">FAQ</span>
+				<img src="bell-notification.jpeg" alt="Notifications" class="h-8 w-8 rounded-full">
+				<img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Profile" class="h-8 w-8 rounded-full">
         </div>
-    </main>
+	</nav>
 
-<!-- Footer -->
-    <footer class="bg-gray-100 mt-16 py-8">
-        <div class="container mx-auto flex justify-between">
-            <!-- Logo and description -->
-            <div class="w-1/4">
-                <img src="Airtrav-logo.png" alt="Airtrav Logo" class="h-8 w-8 mb-2">
-                <p class="text-sm text-gray-600">Similarly, a loan taken out to buy a car may be secured by the car. The duration of the loan.</p>
-                <!-- Email subscription form -->
-                <div class="mt-4 flex">
-                    <input type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
-                    <button class="btn btn-primary ml-2">→</button>
-                </div>
-            </div>
-        
-            <!-- Services -->
-            <div>
-                <h4 class="font-bold mb-2">Services</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="text-sm text-gray-600">Trip Planner</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Tour Planning</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Tour Guide</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Tour Package</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Tour advice</a></li>
-                </ul>
-            </div>
-        
-            <!-- Support -->
-            <div>
-                <h4 class="font-bold mb-2">Support</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="text-sm text-gray-600">Account</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Legal</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Contact</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Terms & Condition</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Privacy Policy</a></li>
-                </ul>
-            </div>
-        
-            <!-- Business -->
-            <div>
-                <h4 class="font-bold mb-2">Business</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="text-sm text-gray-600">Success</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">About Locato</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Blog</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Information</a></li>
-                    <li><a href="#" class="text-sm text-gray-600">Travel Guide</a></li>
-                </ul>
-            </div>
-        </div>
-    
-        <!-- Copyright and social links -->
-        <div class="container mx-auto mt-8 flex justify-between items-center">
-            <p class="text-sm text-gray-600">Copyright© 2023 UIHUT LLC. All rights reserved.</p>
-            <div class="flex space-x-4">
-                <a href="#" class="text-gray-600"><img src="path-to-facebook-icon.svg" alt="Facebook" class="h-6 w-6"></a>
-                <a href="#" class="text-gray-600"><img src="path-to-linkedin-icon.svg" alt="LinkedIn" class="h-6 w-6"></a>
-                <a href="#" class="text-gray-600"><img src="path-to-twitter-icon.svg" alt="Twitter" class="h-6 w-6"></a>
-                <a href="#" class="text-gray-600"><img src="path-to-instagram-icon.svg" alt="Instagram" class="h-6 w-6"></a>
-            </div>
-        </div>
-    </footer>
+	<!-- Main content -->
+	<main class="container mx-auto mt-8">
+		<!-- Trip checklist tabs -->
+		<div class="flex space-x-4 mb-4">
+			<button class="btn btn-ghost">Route</button>
+			<button class="btn btn-ghost">Day by day</button>
+			<button class="btn btn-ghost">Where to stay</button>
+			<button class="btn btn-active">Checklist</button>
+		</div>
+
+		<!-- Trip checklist content -->
+		<div class="flex">
+			<!-- Left sidebar -->
+			<div class="w-1/4 pr-4">
+				<h2 class="text-xl font-bold mb-4">Trip checklist</h2>
+				<ul class="space-y-2">
+					<li class="flex items-center">
+						<span class="bg-orange-100 text-orange-500 p-2 rounded-full mr-2">✈️</span> Travel (2)</li>
+					<li class="flex items-center">
+						<span class="bg-green-100 text-green-500 p-2 rounded-full mr-2">🎟️</span> Tickets & Tours (2)
+					</li>
+					<li class="flex items-center">
+						<span class="bg-blue-100 text-blue-500 p-2 rounded-full mr-2">🏨</span> Hotel (1)</li>
+					<li class="flex items-center">
+						<span class="bg-purple-100 text-purple-500 p-2 rounded-full mr-2">📅</span> Plan Ahead (4)</li>
+				</ul>
+			</div>
+
+			<!-- Right content area -->
+			<div class="w-3/4">
+				<!-- Progress bar -->
+				<div class="mb-8">
+					<h3 class="text-lg font-semibold mb-2">Check list</h3>
+					<div class="bg-gray-200 h-2 rounded-full">
+						<div class="bg-blue-500 h-2 rounded-full w-2/5"></div>
+					</div>
+					<span class="text-sm text-gray-500">40%</span>
+				</div>
+
+				<!-- ADD WEATHER API SECTION HERE -->
+
+
+				<section class="container mx-auto mt-16 mb-16">
+					<h2 class="text-2xl font-bold mb-4">Weather Forecast</h2>
+					<div class="mb-4">
+						<input type="text" id="cityInput" placeholder="Enter city name" class="input input-bordered w-full max-w-xs">
+						<button id="updateForecast" class="btn btn-primary ml-2">Update Forecast</button>
+					</div>
+					<div id="weatherForecast" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+						<!-- WEATHER CARDS WILL BE HERE TOO BY JAVASCRIPT -->
+					</div>
+				</section>
+
+				<!-- Travel section -->
+				<section class="mb-8" id="travel-section">
+					<h3 class="text-lg font-semibold mb-4" id="travel-header">Travel (2)</h3>
+					<div class="grid grid-cols-2 gap-4">
+						<!-- Flight cards -->
+						<div class="card bg-base-100 shadow-xl">
+							<div class="card-body">
+								<h4 class="card-title">✈️ Dhaka City</h4>
+								<p>📍 Bangkok</p>
+								<button class="btn btn-primary">Check prices</button>
+							</div>
+						</div>
+						<div class="card bg-base-100 shadow-xl">
+							<div class="card-body">
+								<h4 class="card-title">✈️ Bangkok</h4>
+								<p>📍 Dhaka City</p>
+								<button class="btn btn-primary">Check prices</button>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Tickets & Tours section -->
+				<section class="mb-8">
+					<h3 class="text-lg font-semibold mb-4">Tickets & Tours (2)</h3>
+					<div class="grid grid-cols-2 gap-4">
+						<!-- Tour cards -->
+						<div class="card bg-base-100 shadow-xl">
+							<figure>
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt96eI1duitjDwxBoTCBocYahoURKcEXdnQ&s" alt="Spas - Bangkok" /></figure>
+								<div class="card-body">
+									<h4 class="card-title">Spas - Bangkok</h4>
+									<p>Wed 3/29</p>
+									<button class="btn btn-primary">Buy tickets</button>
+								</div>
+						</div>
+						<div class="card bg-base-100 shadow-xl">
+							<figure>
+								<img src="https://www.kkday.com/en/blog/wp-content/uploads/featured_slb.jpg" alt="Sea Life Bangkok" /></figure>
+								<div class="card-body">
+									<h4 class="card-title">Sea Life Bangkok</h4>
+									<p>Wed 8/29</p>
+									<button class="btn btn-primary">Buy tickets</button>
+								</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Hotel section -->
+				<section class="mb-8" id="hotel-section">
+					<h3 class="text-lg font-semibold mb-4" id="hotel-header">Hotel (1)</h3>
+					<div class="card bg-base-100 shadow-xl">
+						<div class="card-body">
+							<h4 class="card-title">🏨 Bangkok</h4>
+							<p>Tue 3/28 - Sat 4/1</p>
+							<button class="btn btn-primary">Check prices</button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Travel Planner section - TASK: Add a new section to your HTML for the travel planner -->
+				<section class="mb-8" id="travel-planner">
+					<form id="travel-planner-form" class="card bg-base-100 shadow-xl p-4">
+						<h4 class="card-title mb-4">Add New Travel Plan</h4>
+						<input type="date" id="plan-date" class="input input-bordered w-full mb-2" required>
+						<input type="text" id="plan-location" placeholder="Location" class="input input-bordered w-full mb-2" required>
+						<textarea id="plan-description" placeholder="Plan details" class="textarea textarea-bordered w-full mb-2" required></textarea>
+						<button type="submit" class="btn btn-primary">Add Plan</button>
+					</form>
+		<div id="travel-plans-list" class="mt-4 card bg-base-100 shadow-xl">
+          </div>
+				</section>
+
+				<!-- Plan Ahead section -->
+				<section id="plan-ahead-section">
+					<h3 class="text-lg font-semibold mb-4">Plan Ahead (4)</h3>
+					<div class="space-y-4">
+						<!-- Repeated for each plan ahead item -->
+						<div class="card bg-base-100 shadow-xl">
+							<div class="card-body flex flex-row justify-between items-center">
+								<div class="flex items-center">
+									<span class="bg-orange-100 text-orange-500 p-2 rounded-full mr-2">📄</span>
+									<p>Check visa requirements</p>
+								</div>
+								<button class="btn btn-outline">Check visa</button>
+							</div>
+						</div>
+						<!-- Repeat for other plan ahead items -->
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="bg-gray-100 mt-16 py-8">
+		<div class="container mx-auto flex justify-between">
+			<!-- Logo and description -->
+			<div class="w-1/4">
+				<img src="Airtrav-logo.png" alt="Airtrav Logo" class="h-8 w-20 mb-2">
+				<p class="text-sm text-gray-600">Similarly, a loan taken out to buy a car may be secured by the car. The
+					duration of the loan.</p>
+				<!-- Email subscription form -->
+				<div class="mt-4 flex">
+					<input type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
+					<button class="btn btn-primary ml-2">→</button>
+				</div>
+			</div>
+
+			<!-- Services -->
+			<div>
+				<h4 class="font-bold mb-2">Services</h4>
+				<ul class="space-y-1">
+					<li><a href="#" class="text-sm text-gray-600">Trip Planner</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Tour Planning</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Tour Guide</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Tour Package</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Tour advice</a></li>
+				</ul>
+			</div>
+
+			<!-- Support -->
+			<div>
+				<h4 class="font-bold mb-2">Support</h4>
+				<ul class="space-y-1">
+					<li><a href="#" class="text-sm text-gray-600">Account</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Legal</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Contact</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Terms & Condition</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Privacy Policy</a></li>
+				</ul>
+			</div>
+
+			<!-- Business -->
+			<div>
+				<h4 class="font-bold mb-2">Business</h4>
+				<ul class="space-y-1">
+					<li><a href="#" class="text-sm text-gray-600">Success</a></li>
+					<li><a href="#" class="text-sm text-gray-600">About Locato</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Blog</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Information</a></li>
+					<li><a href="#" class="text-sm text-gray-600">Travel Guide</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Copyright and social links -->
+		<div class="container mx-auto mt-8 flex justify-between items-center">
+			<p class="text-sm text-gray-600">Copyright© 2023 UIHUT LLC. All rights reserved.</p>
+			<div class="flex space-x-4">
+				<a href="#"
+					class="text-gray-600"><img src="path-to-facebook-icon.svg" alt="Facebook" class="h-6 w-6"></a>
+					<a href="#"
+						class="text-gray-600"><img src="path-to-linkedin-icon.svg" alt="LinkedIn" class="h-6 w-6"></a>
+						<a href="#"
+							class="text-gray-600"><img src="path-to-twitter-icon.svg" alt="Twitter" class="h-6 w-6"></a>
+							<a href="#"
+								class="text-gray-600"><img src="path-to-instagram-icon.svg" alt="Instagram" class="h-6 w-6"></a>
+			</div>
+		</div>
+	</footer>
 
 </body>
+
 </html>
